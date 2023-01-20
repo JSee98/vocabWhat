@@ -1,0 +1,46 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type CreateUserResponseDto {
+  createdUser: Boolean!
+}
+
+type Word {
+  _id: String!
+
+  """word in vocab"""
+  word: String!
+
+  """meaning of the word"""
+  meaning: String!
+
+  """memonics for the word"""
+  memonic: [String!]!
+}
+
+type Query {
+  getOneWordById(id: String!): Word!
+  getAllWords: [Word!]!
+  getOneWordByWord(word: String!): Word!
+}
+
+type Mutation {
+  createOneUser(input: CreateUserDto!): CreateUserResponseDto!
+  addOneWord(input: CreateWordDto!): Word!
+}
+
+input CreateUserDto {
+  email: String!
+}
+
+input CreateWordDto {
+  """Word to add"""
+  word: String!
+
+  """Meaning of the word"""
+  meaning: String!
+
+  """Memonics for the word"""
+  memonic: [String!]!
+}
